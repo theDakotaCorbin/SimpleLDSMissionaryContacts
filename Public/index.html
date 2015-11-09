@@ -1,0 +1,110 @@
+<!doctype html>
+<html ng-app='angularContacts'>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>AngularContacts</title>
+        <link rel="stylesheet" href="css/style.css">
+        <link href='https://fonts.googleapis.com/css?family=Raleway:400,100' rel='stylesheet' type='text/css'>
+    </head>
+    <body ng-controller='mainCtrl'>
+        
+        
+        <h1>Contacts</h1>
+          
+        <strong>Search:</strong> <input ng-model='personSearch' class='fields' type="text" placeholder="Search">
+        
+        <br/>
+        <br/>
+        
+        
+<!--        CREATE NEW CONTACT FORM-->
+        
+            <div class='grid'>
+        <h4>+ Create New</h4>
+                <div class='grid-1'>
+        <div class='module'> 
+        <p>   
+        First Name: <input class='fields' type="text" placeholder="First Name" ng-model='person.firstName'>
+        <br/>
+        Last Name: <input class='fields' type="text" placeholder="Last Name" ng-model='person.lastName'>
+            <br/>
+        Status: <input class='fields' type="text" placeholder="Status" ng-model='person.status'>
+        <br/>
+        Street Address: <input class='fields' type="text" placeholder="Street Address" ng-model='person.streetAddress'>
+        <br/>
+        City: <input class='fields' type="text" placeholder="City" ng-model='person.city'>
+        <br/>
+        State: <input class='fields' type="text" placeholder="State" ng-model='person.state'>
+        <br/>
+        Zip Code: <input class='fields' type="text" placeholder="Zip Code" ng-model='person.zipCode'>
+        <br/>
+        Phone Number: <input class='fields' type="text" placeholder="Phone Number" ng-model='person.phoneNumber'>
+        <br/>
+        <input type='submit' value="Save" ng-click='newPerson(person)'>
+        <br/>
+            </p>
+            </div>
+                </div>
+        </div>
+        
+<!--        CREATE NEW CONTACT FORM END-->
+        
+        <br/>
+        
+        <strong>Filter:</strong>
+        <br/>
+        <br/>
+        <strong>My Contacts</strong>
+        <br/>
+        <br/>
+        
+        <div id='contactsContainer'>
+       <div class='contactsModule' ng-repeat="person in persons | filter: personSearch" >
+           <div id='contactName'>{{person.firstName}} <strong>{{person.lastName}}</strong></div>
+           <div class='details'>
+        Status: {{person.status}}
+               <br/>
+        Street Address: {{person.streetAddress}}
+               <br/>
+        City: {{person.city}}
+               <br/>
+        State: {{person.state}}
+               <br/>
+        Zip Code:{{person.zipCode}}
+               <br/>
+        Phone Number: {{person.phoneNumber}}
+           <br/>
+               <br/>
+               <a href="https://maps.google.com?daddr= + {{person.streetAddress}} + {{person.city}} + {{person.state}} + {{person.zipCode}}" target='_blank'>View on Map</a>
+               
+               <br/>
+               <br/>
+               
+               <input id='deleteButton' type="button" value="Delete" ng-click='deletePerson(person._id)'>
+           </div>
+           <br/>
+        <hr>
+        </div>
+            </div>
+        
+        
+        
+        
+        
+
+        <ng-view></ng-view>
+        
+        <!-- JQUERY -->
+        <script src="libs/jquery-1.11.3.js"></script>
+        <!-- ANGULAR -->
+        <script src="libs/angular.js"></script>
+        <!-- ANGULAR ROUTES -->
+        <script src="libs/angular-route.js"></script>
+        <!-- JAVASCRIPT FILES -->
+        <script src="js/app.js"></script>
+        
+        
+    </body>
+</html>

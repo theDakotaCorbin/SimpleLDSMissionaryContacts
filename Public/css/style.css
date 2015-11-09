@@ -1,0 +1,65 @@
+html, body {
+    background-color: black;
+    text-align: center;
+    font-family: 'Raleway', sans-serif;
+    color: white;
+    padding: 30px;
+}
+
+
+h4 {
+    width: 150px;
+    margin: auto;
+}
+h4:hover {
+    color: yellow;
+}
+
+.grid {
+    list-style-type: none;
+}
+
+.pointer {
+    cursor: pointer;
+    }
+.module {
+    background-color: black;
+    width: 300px;
+    margin: auto;
+    
+    
+}
+.contactsModule {
+    text-align: left;
+}
+#contactsContainer {
+    width: 500px;
+    margin: auto;
+}
+
+#contactName {
+    color: white;
+    font-size: 22px;
+}
+.details {
+    width: 500px;
+    margin: auto;
+    padding-left: 20px;
+    font-size: 15px;
+}
+
+#deleteButton {
+    background-color: transparent;
+    border: none;
+    color: white;
+    font-family: inherit;
+    font-size: 12px;
+}
+#deleteButton:hover {
+    color: yellow;
+    cursor: pointer;
+}
+
+.fields {
+    border-radius: 3px;
+}
